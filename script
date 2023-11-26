@@ -1,0 +1,31 @@
+--Load
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+--Main
+local Window = OrionLib:MakeWindow({Name = "UGC FARM", HidePremium = false, SaveConfig = true, ConfigFolder = "Auto"})
+
+--Script
+local AutoFarmTab = Window:MakeTab({
+    Name = "Farm",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = AutoFarmTab:AddSection({
+    Name = "Auto obby"
+})
+
+
+AutoFarmTab:AddButton({
+    Name = "Auto obby",
+    Callback = function()      
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADMScrift/Obby-b/main/1"))()
+    end
+})
+
+AutoFarmTab:AddButton({
+    Name = "Auto Rebirth",
+    Callback = function()      
+        _G.auto = true while true do wait(0.00000001) if _G.auto == true then game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("callForRebirth"):FireServer() end end
+    end
+})
+
